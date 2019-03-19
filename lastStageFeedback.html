@@ -17,7 +17,7 @@
 
     <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans|Alegreya:400,400i,500,500i|IBM+Plex+Mono:300i,400,400i,700,700i|IBM+Plex+Sans+Condensed:400,400i|IBM+Plex+Sans:100,100i,400,400i,500,500i,700,700i|IBM+Plex+Serif:400,400i|Merriweather|Merriweather+Sans|Montserrat|Nanum+Myeongjo:400,700,800|Nunito|Nunito+Sans:400,400i|Quattrocento|Quattrocento+Sans|Roboto|Roboto+Mono|Roboto+Slab&amp;subset=latin-ext"
         rel="stylesheet">
-   <!-- <link rel="stylesheet" href="css/simple-rating.css">
+    <!-- <link rel="stylesheet" href="css/simple-rating.css">
     <script src="js/simple-rating.js"></script>-->
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -48,32 +48,91 @@
         }
     </style>
     <script type="text/javascript">
-       // import { MDCFormField } from '@material/form-field';
-       // import { MDCRadio } from '@material/radio';
+        // import { MDCFormField } from '@material/form-field';
+        // import { MDCRadio } from '@material/radio';
 
-       // const radio = new MDCRadio(document.querySelector('.mdc-radio'));
-      //  const formField = new MDCFormField(document.querySelector('.mdc-form-field'));
-      //  formField.input = radio;
-        
-       function showText()
-       {
-            if(document.getElementById("radio1").checked==true)
-            {
-                alert("calling");
-                document.getElementById("show").style.color="#ff0022";
-                document.getElementById("show").innerHTML="very sad";
+        // const radio = new MDCRadio(document.querySelector('.mdc-radio'));
+        //  const formField = new MDCFormField(document.querySelector('.mdc-form-field'));
+        //  formField.input = radio;
+
+        function showText() {
+            if (document.getElementById("radio1").checked == true) {
+                //alert("calling");
+                document.getElementById("show").style.color = "#ff0022";
+                document.getElementById("show").innerHTML = "unsatisfied";
+                document.getElementById("radio_action").innerHTML = "&#128546";
+            }
+            else if (document.getElementById("radio-2").checked == true) {
+                // alert("calling");
+                document.getElementById("show").style.color = "#DC143C";
+                document.getElementById("show").innerHTML = "very very sad";
+                document.getElementById("radio_action").innerHTML = "&#128542";
+            }
+            else if (document.getElementById("radio-3").checked == true) {
+                //  alert("calling");
+                document.getElementById("show").style.color = "#CD69C9";
+                document.getElementById("show").innerHTML = "very sad";
+                document.getElementById("radio_action").innerHTML = "&#128543";
+            }
+            else if (document.getElementById("radio-4").checked == true) {
+                // alert("calling");
+                document.getElementById("show").style.color = "#DAA520";
+                document.getElementById("show").innerHTML = "sad";
+                document.getElementById("radio_action").innerHTML = "&#128544";
+            }
+            else if (document.getElementById("radio-5").checked == true) {
+                // alert("calling");
+                document.getElementById("show").style.color = "#FFD700";
+                document.getElementById("show").innerHTML = "satisfied";
+                document.getElementById("radio_action").innerHTML = "&#128547";
+            }
+            else if (document.getElementById("radio-6").checked == true) {
+                // alert("calling");
+                document.getElementById("show").style.color = "#0000FF";
+                document.getElementById("show").innerHTML = "could be better";
+                document.getElementById("radio_action").innerHTML = "&#128552	";
+            }
+            else if (document.getElementById("radio-7").checked == true) {
+                // alert("calling");
+                document.getElementById("show").style.color = "#1E90FF";
+                document.getElementById("show").innerHTML = "happy";
+                document.getElementById("radio_action").innerHTML = "&#128528";
+            }
+            else if (document.getElementById("radio-8").checked == true) {
+                // alert("calling");
+                document.getElementById("show").style.color = "#00FF7F";
+                document.getElementById("show").innerHTML = "very happy";
+                document.getElementById("radio_action").innerHTML = "&#128522";
+            }
+            else if (document.getElementById("radio-9").checked == true) {
+                // alert("calling");
+                document.getElementById("show").style.color = "#00FF00";
+                document.getElementById("show").innerHTML = "Excellent";
+                document.getElementById("radio_action").innerHTML = "&#128512";
+            }
+            else if (document.getElementById("radio-10").checked == true) {
+                // alert("calling");
+                document.getElementById("show").style.color = "#006400";
+                document.getElementById("show").innerHTML = "oustanding";
+                document.getElementById("radio_action").innerHTML = "&#129321";
             }
         }
-            
-               
-        
+            /*
+                &#128544;
+                &#128533;
+                &#128528;
+                &#128521;
+                &#128513;
+            */
+
+
 
 
     </script>
 </head>
 
 <body>
-        
+
     <div class="container mt-4 bg-light">
         <div class="row">
             <div class=" col-lg-3 col-xl-3 col-md-3"></div>
@@ -84,44 +143,104 @@
                         <input class="form-control mt-2" placeholder="Enter Your Name">
                         <input class="form-control mt-2" placeholder="Enter Your Email Id">
                         <h6 class="mt-3" style="font-weight: bold">Are You Happy With Our Service</h6>
+
+                        <span id="radio_action"></span>
+
                         <div class="mdc-card p-2  bg-light">
-                            <div class=" bg-light"  style="display: -webkit-inline-box;">
-                            <div class="mdc-radio">
-                                <input class="mdc-radio__native-control" type="radio" id="radio1" onclick="showText()" name="radios" checked>
-                                <div class="mdc-radio__background">
-                                    <p id="radio_para" style="width:100px">&#128544;</p>
-                                </div>
-                               
-                            </div>
-                            <div class="mdc-radio">
-                                <input class="mdc-radio__native-control" type="radio" id="radio-2" name="radios" checked>
-                                <div class="mdc-radio__background">
-                                    <p style="width:100px">&#128533;</p>
-                                </div>
-                            </div>
-                            <div class="mdc-radio">
-                                <input class="mdc-radio__native-control" type="radio" id="radio-3" name="radios" checked>
-                                <div class="mdc-radio__background">
-                                    <p style="width:100px">&#128528;</p>
-                                </div>
-                            </div>
-                            <div class="mdc-radio">
-                                <input class="mdc-radio__native-control" type="radio" id="radio-4" name="radios" checked>
-                                <div class="mdc-radio__background">
-                                    <p style="width:100px">&#128521;</p>
+                            <div class=" bg-light" style="display: -webkit-inline-box;">
+                                <div class="container" style =" align-items: center " >
+                                    <div class="row">
+                                            <div class="col-lg-1 col-md-3 col-sm-6"></div>
+                                        <div class="col-lg-2 col-md-3 col-sm-6">
+                                            <div class="mdc-radio">
+                                                <input class="mdc-radio__native-control" type="radio" id="radio1" onclick="showText()" name="radios" checked>
+                                                <div class="mdc-radio__background">
+                                                    <p id="radio_para" style="width:100px">1</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2 col-md-3 col-sm-6">
+                                            <div class="mdc-radio">
+                                                <input class="mdc-radio__native-control" type="radio" id="radio-2" onclick="showText()" name="radios" checked>
+                                                <div class="mdc-radio__background">
+                                                    <p style="width:100px">2</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                       
+                                        
+                                        <div class="col-lg-2 col-md-3 col-sm-6">
+                                            <div class="mdc-radio">
+                                                <input class="mdc-radio__native-control" type="radio" id="radio-3" onclick="showText()" name="radios" checked>
+                                                <div class="mdc-radio__background">
+                                                    <p style="width:100px">3</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2 col-md-3 col-sm-6">
+                                            <div class="mdc-radio">
+                                                <input class="mdc-radio__native-control" type="radio" id="radio-4" onclick="showText()" name="radios" checked>
+                                                <div class="mdc-radio__background">
+                                                    <p style="width:100px">4</p>
 
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2 col-md-3 col-sm-6">
+                                            <div class="mdc-radio">
+                                                <input class="mdc-radio__native-control" type="radio" id="radio-5" onclick="showText()" name="radios" checked>
+                                                <div class="mdc-radio__background">
+                                                    <p style="width:100px">5</p>
+                                                </div>
+                                            </div>
+                                        </div>
                                 </div>
-                            </div>
-                            <div class="mdc-radio">
-                                <input class="mdc-radio__native-control" type="radio" id="radio-6" name="radios" checked>
-                                <div class="mdc-radio__background">
-                                    <p style="width:100px">&#128513;</p>
+                                <div class="row">
+                                        <div class="col-lg-2 col-md-3 col-sm-6">
+                                            <div class="mdc-radio">
+                                                <input class="mdc-radio__native-control" type="radio" id="radio-6" onclick="showText()" name="radios" checked>
+                                                <div class="mdc-radio__background">
+                                                    <p style="width:100px">6</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2 col-md-3 col-sm-6">
+                                            <div class="mdc-radio">
+                                                <input class="mdc-radio__native-control" type="radio" id="radio-7" onclick="showText()" name="radios" checked>
+                                                <div class="mdc-radio__background">
+                                                    <p style="width:100px">7</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2 col-md-3 col-sm-6">
+                                            <div class="mdc-radio">
+                                                <input class="mdc-radio__native-control" type="radio" id="radio-8" onclick="showText()" name="radios" checked>
+                                                <div class="mdc-radio__background">
+                                                    <p style="width:100px">8</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2 col-md-3 col-sm-6">
+                                            <div class="mdc-radio">
+                                                <input class="mdc-radio__native-control" type="radio" id="radio-9" onclick="showText()" name="radios" checked>
+                                                <div class="mdc-radio__background">
+                                                    <p style="width:100px">9</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2 col-md-3 col-sm-6">
+                                            <div class="mdc-radio">
+                                                <input class="mdc-radio__native-control" type="radio" id="radio-10" onclick="showText()" name="radios" checked>
+                                                <div class="mdc-radio__background">
+                                                    <p style="width:100px">10</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-
-                        </div>
-                        <p class="p-2" style="font-weight: bolder" id="show"></p> 
+                        <p class="p-2" style="font-weight: bolder" id="show"></p>
 
                         <div class="mdc-card mt-2 p-1 md-select">
                             <select class="form-control mt-3" aria-placeholder="Type of Suggestion">
@@ -129,7 +248,7 @@
                                 <option>Enquiry</option>
                                 <option>Complaint</option>
                             </select>
-                            <p style="font-weight: bold"class="mt-4">Write Your Complaint/Query/Complaint</p>
+                            <p style="font-weight: bold" class="mt-4">Write Your Complaint/Query/Complaint</p>
                             <div class="mdc-text-field mdc-text-field--textarea form-field m-2">
                                 <textarea id="textarea" class="p-2 mdc-text-field__input" placeholder="Enter Your Query/Suggestion/Complaint" rows="4" cols="40"></textarea>
                                 <div class="mdc-notched-outline">
@@ -140,7 +259,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div  class="mdc-button mdc-button--unelevated mdc-button--outlined shadow-sm mt-2">Submit</div>
+                        <div class="mdc-button mdc-button--unelevated mdc-button--outlined shadow-sm mt-2">Submit</div>
                     </form>
                 </div>
             </div>
