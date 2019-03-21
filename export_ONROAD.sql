@@ -1,0 +1,178 @@
+--------------------------------------------------------
+--  File created - Thursday-March-21-2019   
+--------------------------------------------------------
+--------------------------------------------------------
+--  DDL for Table CUSTOMER
+--------------------------------------------------------
+
+  CREATE TABLE "SAM"."CUSTOMER" 
+   (	"CUSTOMERNAME" VARCHAR2(50 BYTE), 
+	"PASSWORD" VARCHAR2(50 BYTE), 
+	"GENDER" NUMBER(*,0), 
+	"DOB" DATE, 
+	"CONTACT" VARCHAR2(10 BYTE), 
+	"EMAILID" VARCHAR2(20 BYTE), 
+	"CUSTOMER_ID" NUMBER(*,0)
+   ) SEGMENT CREATION DEFERRED 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table CUSTOMER_LOCATION
+--------------------------------------------------------
+
+  CREATE TABLE "SAM"."CUSTOMER_LOCATION" 
+   (	"CUSTOMER_ID" NUMBER(*,0), 
+	"CONTACT" VARCHAR2(10 BYTE), 
+	"EMAIID" VARCHAR2(30 BYTE), 
+	"LOCATION" VARCHAR2(30 BYTE), 
+	"LATITUDE" NUMBER(*,0), 
+	"LONGITUDE" NUMBER(*,0)
+   ) SEGMENT CREATION DEFERRED 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table LOGIN
+--------------------------------------------------------
+
+  CREATE TABLE "SAM"."LOGIN" 
+   (	"USERID" NUMBER(10,0), 
+	"PASSWORD" VARCHAR2(50 BYTE), 
+	"TYPE" CHAR(1 BYTE)
+   ) SEGMENT CREATION DEFERRED 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table MECHANIC
+--------------------------------------------------------
+
+  CREATE TABLE "SAM"."MECHANIC" 
+   (	"MECHANIC_NAME" VARCHAR2(50 BYTE), 
+	"PASSWORD" VARCHAR2(50 BYTE), 
+	"GENDER" NUMBER(*,0), 
+	"DOB" DATE, 
+	"CONTACT" NUMBER(10,0), 
+	"EMAILID" VARCHAR2(20 BYTE), 
+	"LATITUDE" NUMBER(*,0), 
+	"LONGITUDE" NUMBER(*,0), 
+	"MECHANIC_ID" NUMBER(*,0)
+   ) SEGMENT CREATION DEFERRED 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table RATING
+--------------------------------------------------------
+
+  CREATE TABLE "SAM"."RATING" 
+   (	"MECHANICID" NUMBER(*,0), 
+	"CUSTOMERID" NUMBER(*,0), 
+	"RATING" NUMBER(*,0)
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+REM INSERTING into SAM.CUSTOMER
+SET DEFINE OFF;
+REM INSERTING into SAM.CUSTOMER_LOCATION
+SET DEFINE OFF;
+REM INSERTING into SAM.LOGIN
+SET DEFINE OFF;
+REM INSERTING into SAM.MECHANIC
+SET DEFINE OFF;
+REM INSERTING into SAM.RATING
+SET DEFINE OFF;
+--------------------------------------------------------
+--  DDL for Index CUSTOMER_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "SAM"."CUSTOMER_PK" ON "SAM"."CUSTOMER" ("CUSTOMER_ID") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index LOGIN_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "SAM"."LOGIN_PK" ON "SAM"."LOGIN" ("USERID") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index MECHANIC_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "SAM"."MECHANIC_PK" ON "SAM"."MECHANIC" ("MECHANIC_ID") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  Constraints for Table CUSTOMER
+--------------------------------------------------------
+
+  ALTER TABLE "SAM"."CUSTOMER" MODIFY ("CUSTOMERNAME" NOT NULL ENABLE);
+  ALTER TABLE "SAM"."CUSTOMER" MODIFY ("PASSWORD" NOT NULL ENABLE);
+  ALTER TABLE "SAM"."CUSTOMER" MODIFY ("GENDER" NOT NULL ENABLE);
+  ALTER TABLE "SAM"."CUSTOMER" MODIFY ("DOB" NOT NULL ENABLE);
+  ALTER TABLE "SAM"."CUSTOMER" MODIFY ("CONTACT" NOT NULL ENABLE);
+  ALTER TABLE "SAM"."CUSTOMER" MODIFY ("CUSTOMER_ID" NOT NULL ENABLE);
+  ALTER TABLE "SAM"."CUSTOMER" ADD CONSTRAINT "CUSTOMER_PK" PRIMARY KEY ("CUSTOMER_ID")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "USERS"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table CUSTOMER_LOCATION
+--------------------------------------------------------
+
+  ALTER TABLE "SAM"."CUSTOMER_LOCATION" MODIFY ("CUSTOMER_ID" NOT NULL ENABLE);
+  ALTER TABLE "SAM"."CUSTOMER_LOCATION" MODIFY ("CONTACT" NOT NULL ENABLE);
+  ALTER TABLE "SAM"."CUSTOMER_LOCATION" MODIFY ("LOCATION" NOT NULL ENABLE);
+  ALTER TABLE "SAM"."CUSTOMER_LOCATION" MODIFY ("LATITUDE" NOT NULL ENABLE);
+  ALTER TABLE "SAM"."CUSTOMER_LOCATION" MODIFY ("LONGITUDE" NOT NULL ENABLE);
+--------------------------------------------------------
+--  Constraints for Table LOGIN
+--------------------------------------------------------
+
+  ALTER TABLE "SAM"."LOGIN" MODIFY ("USERID" NOT NULL ENABLE);
+  ALTER TABLE "SAM"."LOGIN" MODIFY ("PASSWORD" NOT NULL ENABLE);
+  ALTER TABLE "SAM"."LOGIN" MODIFY ("TYPE" NOT NULL ENABLE);
+  ALTER TABLE "SAM"."LOGIN" ADD CONSTRAINT "LOGIN_PK" PRIMARY KEY ("USERID")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 
+  TABLESPACE "USERS"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table MECHANIC
+--------------------------------------------------------
+
+  ALTER TABLE "SAM"."MECHANIC" MODIFY ("MECHANIC_NAME" NOT NULL ENABLE);
+  ALTER TABLE "SAM"."MECHANIC" MODIFY ("PASSWORD" NOT NULL ENABLE);
+  ALTER TABLE "SAM"."MECHANIC" MODIFY ("GENDER" NOT NULL ENABLE);
+  ALTER TABLE "SAM"."MECHANIC" MODIFY ("DOB" NOT NULL ENABLE);
+  ALTER TABLE "SAM"."MECHANIC" MODIFY ("CONTACT" NOT NULL ENABLE);
+  ALTER TABLE "SAM"."MECHANIC" MODIFY ("LATITUDE" NOT NULL ENABLE);
+  ALTER TABLE "SAM"."MECHANIC" MODIFY ("LONGITUDE" NOT NULL ENABLE);
+  ALTER TABLE "SAM"."MECHANIC" MODIFY ("MECHANIC_ID" NOT NULL ENABLE);
+  ALTER TABLE "SAM"."MECHANIC" ADD CONSTRAINT "MECHANIC_PK" PRIMARY KEY ("MECHANIC_ID")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "USERS"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table RATING
+--------------------------------------------------------
+
+  ALTER TABLE "SAM"."RATING" MODIFY ("MECHANICID" NOT NULL ENABLE);
+  ALTER TABLE "SAM"."RATING" MODIFY ("CUSTOMERID" NOT NULL ENABLE);
+  ALTER TABLE "SAM"."RATING" MODIFY ("RATING" NOT NULL ENABLE);
+--------------------------------------------------------
+--  Ref Constraints for Table CUSTOMER_LOCATION
+--------------------------------------------------------
+
+  ALTER TABLE "SAM"."CUSTOMER_LOCATION" ADD CONSTRAINT "CUST_ID_FK" FOREIGN KEY ("CUSTOMER_ID")
+	  REFERENCES "SAM"."CUSTOMER" ("CUSTOMER_ID") ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table RATING
+--------------------------------------------------------
+
+  ALTER TABLE "SAM"."RATING" ADD CONSTRAINT "CUSTID_FK" FOREIGN KEY ("CUSTOMERID")
+	  REFERENCES "SAM"."CUSTOMER" ("CUSTOMER_ID") ENABLE;
+  ALTER TABLE "SAM"."RATING" ADD CONSTRAINT "MECHID_FK" FOREIGN KEY ("MECHANICID")
+	  REFERENCES "SAM"."MECHANIC" ("MECHANIC_ID") ENABLE;
