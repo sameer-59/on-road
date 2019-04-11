@@ -1,0 +1,217 @@
+--------------------------------------------------------
+--  File created - Thursday-April-11-2019   
+--------------------------------------------------------
+--------------------------------------------------------
+--  DDL for Table ACCEPT
+--------------------------------------------------------
+
+  CREATE TABLE "SAM"."ACCEPT" 
+   (	"MECHANICID" NUMBER(*,0), 
+	"CUSTOMERID" NUMBER(*,0), 
+	"MACHANICLATITUDE" FLOAT(126), 
+	"MECHANICLONGITUDE" FLOAT(126), 
+	"CUSTOMERLATITUDE" FLOAT(126), 
+	"CUSTOMERLONGITUDE" FLOAT(126), 
+	"REQUESTID" NUMBER(*,0)
+   ) SEGMENT CREATION DEFERRED 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table ADMIN_TABLE
+--------------------------------------------------------
+
+  CREATE TABLE "SAM"."ADMIN_TABLE" 
+   (	"ADMIN_USERNAME" VARCHAR2(20 BYTE), 
+	"ADMIN_PASSWORD" VARCHAR2(20 BYTE), 
+	"STATUS" NUMBER DEFAULT 1
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table CUSTOMER
+--------------------------------------------------------
+
+  CREATE TABLE "SAM"."CUSTOMER" 
+   (	"ID" NUMBER(*,0), 
+	"NAME" VARCHAR2(30 BYTE), 
+	"PASSWORD" VARCHAR2(30 BYTE), 
+	"GENDER" NUMBER(*,0), 
+	"DOB" VARCHAR2(30 BYTE), 
+	"CONTACT" VARCHAR2(10 BYTE), 
+	"EMAIL" VARCHAR2(30 BYTE)
+   ) SEGMENT CREATION DEFERRED 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table LOGIN
+--------------------------------------------------------
+
+  CREATE TABLE "SAM"."LOGIN" 
+   (	"ID" NUMBER(*,0), 
+	"PASSWORD" VARCHAR2(30 BYTE), 
+	"TYPE" VARCHAR2(2 BYTE)
+   ) SEGMENT CREATION DEFERRED 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table MECHANIC
+--------------------------------------------------------
+
+  CREATE TABLE "SAM"."MECHANIC" 
+   (	"ID" NUMBER(*,0), 
+	"NAME" VARCHAR2(30 BYTE), 
+	"PASSWORD" VARCHAR2(30 BYTE), 
+	"GENDER" NUMBER(*,0), 
+	"DOB" VARCHAR2(30 BYTE), 
+	"CONTACT" VARCHAR2(10 BYTE), 
+	"EMAIL" VARCHAR2(30 BYTE), 
+	"LATITUDE" FLOAT(126), 
+	"LONGITUDE" FLOAT(126)
+   ) SEGMENT CREATION DEFERRED 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table PRODUCT_TABLE
+--------------------------------------------------------
+
+  CREATE TABLE "SAM"."PRODUCT_TABLE" 
+   (	"PID" VARCHAR2(20 BYTE), 
+	"PNAME" VARCHAR2(20 BYTE), 
+	"COMPANY" VARCHAR2(20 BYTE), 
+	"CATEGORY" VARCHAR2(20 BYTE), 
+	"PRICE" VARCHAR2(20 BYTE), 
+	"PDESC" VARCHAR2(200 BYTE)
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table RATING
+--------------------------------------------------------
+
+  CREATE TABLE "SAM"."RATING" 
+   (	"MECHANICID" NUMBER(*,0), 
+	"CUSTOMERID" NUMBER(*,0), 
+	"RATING" FLOAT(126)
+   ) SEGMENT CREATION DEFERRED 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table REJECT
+--------------------------------------------------------
+
+  CREATE TABLE "SAM"."REJECT" 
+   (	"MECHANICID" NUMBER(*,0), 
+	"CUSTOMERID" NUMBER(*,0), 
+	"REQUESTID" NUMBER(*,0)
+   ) SEGMENT CREATION DEFERRED 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table REQUEST
+--------------------------------------------------------
+
+  CREATE TABLE "SAM"."REQUEST" 
+   (	"REQUESTID" NUMBER(*,0), 
+	"CUSTOMERID" NUMBER(*,0), 
+	"CUSTOMERNAME" VARCHAR2(30 BYTE), 
+	"CONTACT" VARCHAR2(10 BYTE), 
+	"EMAIL" VARCHAR2(30 BYTE), 
+	"LOCATION" VARCHAR2(30 BYTE), 
+	"LATITUDE" FLOAT(126), 
+	"LONGITUDE" FLOAT(126), 
+	"MECHANICID" NUMBER(*,0)
+   ) SEGMENT CREATION DEFERRED 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "USERS" ;
+REM INSERTING into SAM.ACCEPT
+SET DEFINE OFF;
+REM INSERTING into SAM.ADMIN_TABLE
+SET DEFINE OFF;
+Insert into SAM.ADMIN_TABLE (ADMIN_USERNAME,ADMIN_PASSWORD,STATUS) values ('admin1','admin1',1);
+Insert into SAM.ADMIN_TABLE (ADMIN_USERNAME,ADMIN_PASSWORD,STATUS) values ('admin2','admin2',1);
+Insert into SAM.ADMIN_TABLE (ADMIN_USERNAME,ADMIN_PASSWORD,STATUS) values ('admin3','admin3',1);
+REM INSERTING into SAM.CUSTOMER
+SET DEFINE OFF;
+REM INSERTING into SAM.LOGIN
+SET DEFINE OFF;
+REM INSERTING into SAM.MECHANIC
+SET DEFINE OFF;
+REM INSERTING into SAM.PRODUCT_TABLE
+SET DEFINE OFF;
+Insert into SAM.PRODUCT_TABLE (PID,PNAME,COMPANY,CATEGORY,PRICE,PDESC) values ('87','snfkjs ','jsdnsd','Sports/Fitness','23','shusnsjsj');
+Insert into SAM.PRODUCT_TABLE (PID,PNAME,COMPANY,CATEGORY,PRICE,PDESC) values ('667','webfhjewbf','wuefhwebhe','Kitchen','9777','ksnhkjsnjskd jnc ');
+Insert into SAM.PRODUCT_TABLE (PID,PNAME,COMPANY,CATEGORY,PRICE,PDESC) values ('1111','book','tata','Kindle/E-Books','500','latest edition');
+Insert into SAM.PRODUCT_TABLE (PID,PNAME,COMPANY,CATEGORY,PRICE,PDESC) values ('374','bike','bajaj','Sports/Fitness','150000','pulsor ns 200');
+Insert into SAM.PRODUCT_TABLE (PID,PNAME,COMPANY,CATEGORY,PRICE,PDESC) values ('782','TV','samsung','Electronics','60000','49 inch smart led tv');
+REM INSERTING into SAM.RATING
+SET DEFINE OFF;
+REM INSERTING into SAM.REJECT
+SET DEFINE OFF;
+REM INSERTING into SAM.REQUEST
+SET DEFINE OFF;
+--------------------------------------------------------
+--  DDL for Index PRODUCT_TABLE_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "SAM"."PRODUCT_TABLE_PK" ON "SAM"."PRODUCT_TABLE" ("PID") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  Constraints for Table REQUEST
+--------------------------------------------------------
+
+  ALTER TABLE "SAM"."REQUEST" MODIFY ("REQUESTID" NOT NULL ENABLE);
+  ALTER TABLE "SAM"."REQUEST" ADD PRIMARY KEY ("REQUESTID")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 
+  TABLESPACE "USERS"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table MECHANIC
+--------------------------------------------------------
+
+  ALTER TABLE "SAM"."MECHANIC" MODIFY ("ID" NOT NULL ENABLE);
+  ALTER TABLE "SAM"."MECHANIC" ADD PRIMARY KEY ("ID")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 
+  TABLESPACE "USERS"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table PRODUCT_TABLE
+--------------------------------------------------------
+
+  ALTER TABLE "SAM"."PRODUCT_TABLE" MODIFY ("PID" NOT NULL ENABLE);
+  ALTER TABLE "SAM"."PRODUCT_TABLE" ADD CONSTRAINT "PRODUCT_TABLE_PK" PRIMARY KEY ("PID")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table ADMIN_TABLE
+--------------------------------------------------------
+
+  ALTER TABLE "SAM"."ADMIN_TABLE" MODIFY ("ADMIN_USERNAME" NOT NULL ENABLE);
+  ALTER TABLE "SAM"."ADMIN_TABLE" MODIFY ("ADMIN_PASSWORD" NOT NULL ENABLE);
+--------------------------------------------------------
+--  Constraints for Table CUSTOMER
+--------------------------------------------------------
+
+  ALTER TABLE "SAM"."CUSTOMER" MODIFY ("ID" NOT NULL ENABLE);
+  ALTER TABLE "SAM"."CUSTOMER" ADD PRIMARY KEY ("ID")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 
+  TABLESPACE "USERS"  ENABLE;
